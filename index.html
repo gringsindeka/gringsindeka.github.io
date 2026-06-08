@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Grings Indeka — Finance & Quantitative Research</title>
-<meta name="description" content="Grings Indeka — Business Engineering & Finance. Equity research, valuation, derivatives, and empirical asset pricing." />
-
+<title>Grings Indeka - Finance & Quantitative Research</title>
+<meta name="description" content="Grings Indeka - Business Engineering & Finance. Equity research, valuation, derivatives, and empirical asset pricing." />
+ 
 <!-- Fonts: Fraunces (display serif) + Hanken Grotesk (body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+ 
 <style>
   :root{
     --ink:        #211d1a;
@@ -28,7 +28,7 @@
     --serif: "Fraunces", Georgia, serif;
     --sans:  "Hanken Grotesk", system-ui, sans-serif;
   }
-
+ 
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
   body{
@@ -39,19 +39,19 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-
-  /* clean, restrained background — a single very faint warm wash at the top */
+ 
+  /* clean, restrained background - a single very faint warm wash at the top */
   body::before{
     content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
     background:
       radial-gradient(900px 420px at 78% -8%, rgba(212,118,58,.05), transparent 70%),
       linear-gradient(180deg, #f8f3ec 0%, var(--paper) 38%);
   }
-
+ 
   .wrap{ position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:0 28px; }
-
+ 
   a{ color:inherit; text-decoration:none; }
-
+ 
   /* ---------- NAV ---------- */
   nav{
     position:sticky; top:0; z-index:50;
@@ -69,11 +69,11 @@
   }
   .navlinks a:hover{ color:var(--ink); background:var(--paper-2); }
   .nav-toggle{ display:none; }
-
+ 
   /* ---------- HERO ---------- */
   header{ padding:72px 0 64px; }
   .hero{ display:grid; grid-template-columns:1.35fr .9fr; gap:54px; align-items:center; }
-
+ 
   .eyebrow{
     display:inline-flex; align-items:center; gap:9px;
     font-size:.78rem; font-weight:700; letter-spacing:1.6px; text-transform:uppercase;
@@ -81,7 +81,7 @@
     border:1px solid var(--line); box-shadow:var(--shadow-sm);
   }
   .eyebrow .pulse{ width:8px; height:8px; border-radius:50%; background:var(--sage); }
-
+ 
   h1{
     font-family:var(--serif); font-weight:500;
     font-size:clamp(2.8rem, 6vw, 4.5rem); line-height:1.02; letter-spacing:-1px;
@@ -90,7 +90,7 @@
   h1 em{ font-style:italic; color:var(--amber-deep); }
   .role{ font-size:1.18rem; color:var(--ink-soft); font-weight:500; margin-bottom:22px; }
   .lede{ font-size:1.06rem; color:var(--ink-soft); max-width:48ch; margin-bottom:30px; }
-
+ 
   .cta-row{ display:flex; flex-wrap:wrap; gap:14px; position:relative; z-index:5; }
   .btn{
     display:inline-flex; align-items:center; gap:10px;
@@ -101,7 +101,7 @@
   .btn.primary:hover{ background:var(--amber-deep); transform:translateY(-2px); }
   .btn.ghost{ border-color:var(--ink); color:var(--ink); }
   .btn.ghost:hover{ background:var(--ink); color:var(--paper); transform:translateY(-2px); }
-
+ 
   /* CV request dropdown */
   .cv-request{ position:relative; display:inline-block; }
   .cv-menu{
@@ -122,7 +122,7 @@
   .cv-menu button::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--amber); flex:none; opacity:0; transition:.18s; }
   .cv-menu button:hover{ background:var(--paper-2); }
   .cv-menu button:hover::before{ opacity:1; }
-
+ 
   /* circular portrait */
   .portrait-wrap{ display:flex; justify-content:center; position:relative; }
   .portrait{
@@ -146,12 +146,12 @@
     display:flex; align-items:center; gap:8px; border:1px solid var(--line);
   }
   .badge-float .b{ width:9px; height:9px; border-radius:50%; background:var(--sage); }
-
+ 
   /* quick stats */
   .stats{ display:flex; gap:30px; margin-top:42px; flex-wrap:wrap; }
   .stat .n{ font-family:var(--serif); font-size:2rem; color:var(--amber-deep); line-height:1; }
   .stat .l{ font-size:.82rem; color:var(--ink-soft); font-weight:600; margin-top:4px; }
-
+ 
   /* ---------- SECTIONS ---------- */
   section{ padding:66px 0; position:relative; }
   .sec-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:38px; }
@@ -161,7 +161,7 @@
     width:42px; height:42px; display:flex; align-items:center; justify-content:center; flex:none;
   }
   .sec-head h2{ font-family:var(--serif); font-weight:500; font-size:clamp(1.9rem,4vw,2.6rem); letter-spacing:-.5px; }
-
+ 
   /* About */
   .about{ display:grid; grid-template-columns:1.5fr 1fr; gap:40px; align-items:start; }
   .about p{ font-size:1.05rem; color:var(--ink-soft); margin-bottom:18px; }
@@ -174,7 +174,7 @@
   .focus-card ul{ list-style:none; }
   .focus-card li{ display:flex; gap:11px; align-items:flex-start; padding:7px 0; font-size:.95rem; color:var(--ink-soft); }
   .focus-card li::before{ content:""; width:9px; height:9px; border-radius:50%; background:var(--amber); margin-top:8px; flex:none; }
-
+ 
   /* Projects grid */
   .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
   .card{
@@ -197,7 +197,7 @@
     color:var(--amber-deep); padding:8px 16px; border:1.5px solid var(--amber); border-radius:999px; transition:.25s; }
   .dl:hover{ background:var(--amber); color:#fff; }
   .dl::before{ content:"↓"; font-weight:700; }
-
+ 
   /* Thesis (forthcoming) */
   .thesis{
     background:linear-gradient(135deg, var(--ink) 0%, #322b25 100%);
@@ -213,7 +213,7 @@
   .lock{ display:inline-flex; align-items:center; gap:9px; margin-top:24px; font-size:.85rem; font-weight:600;
     background:rgba(255,255,255,.1); padding:10px 20px; border-radius:999px; position:relative; }
   .lock .ic{ width:10px; height:10px; border-radius:50%; border:2px solid var(--amber); }
-
+ 
   /* Education timeline */
   .timeline{ position:relative; padding-left:34px; }
   .timeline::before{ content:""; position:absolute; left:9px; top:8px; bottom:8px; width:2px; background:var(--line); }
@@ -224,7 +224,7 @@
   .edu h3{ font-family:var(--serif); font-weight:500; font-size:1.25rem; margin:2px 0; }
   .edu .place{ font-size:.92rem; color:var(--ink-soft); }
   .edu .note{ font-size:.88rem; color:var(--sage); font-weight:600; margin-top:4px; }
-
+ 
   /* Skills */
   .skills{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
   .skillcard{ background:var(--card); border-radius:var(--r); padding:28px; border:1px solid var(--line); box-shadow:var(--shadow-sm); }
@@ -233,7 +233,7 @@
   .pills{ display:flex; flex-wrap:wrap; gap:9px; }
   .pill{ font-size:.82rem; font-weight:600; padding:7px 15px; border-radius:999px; background:var(--paper); border:1px solid var(--line); color:var(--ink-soft); }
   .pill.cert{ background:var(--amber); color:#fff; border-color:var(--amber); }
-
+ 
   /* Contact */
   .contact{ text-align:center; background:var(--card); border-radius:var(--r); padding:60px 40px; box-shadow:var(--shadow-sm); border:1px solid var(--line); position:relative; overflow:hidden; }
   .contact .ring-deco{ position:absolute; width:300px; height:300px; border-radius:50%; border:1.5px solid var(--line); top:-120px; left:-100px; }
@@ -241,20 +241,20 @@
   .contact h2{ font-family:var(--serif); font-weight:500; font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:14px; position:relative; }
   .contact p{ color:var(--ink-soft); margin-bottom:28px; position:relative; }
   .contact .cta-row{ justify-content:center; position:relative; }
-
+ 
   footer{ text-align:center; padding:42px 0 56px; color:var(--ink-soft); font-size:.85rem; }
   footer .dot{ width:7px; height:7px; border-radius:50%; background:var(--amber); display:inline-block; margin:0 8px; vertical-align:middle; }
-
+ 
   /* reveal animation */
   .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
   .reveal.in{ opacity:1; transform:none; }
-
+ 
   /* hero stagger */
   .anim{ opacity:0; transform:translateY(20px); animation:rise .9s forwards; }
   @keyframes rise{ to{ opacity:1; transform:none; } }
   .d1{ animation-delay:.05s } .d2{ animation-delay:.18s } .d3{ animation-delay:.31s }
   .d4{ animation-delay:.44s } .d5{ animation-delay:.57s } .d6{ animation-delay:.7s }
-
+ 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:880px){
     .hero{ grid-template-columns:1fr; gap:42px; }
@@ -284,7 +284,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <div class="wrap">
@@ -302,7 +302,7 @@
     </div>
   </div>
 </nav>
-
+ 
 <!-- HERO -->
 <header id="top">
   <div class="wrap">
@@ -310,8 +310,8 @@
       <div class="hero-text">
         <span class="eyebrow anim d1"><span class="pulse"></span>Business Engineering · Finance</span>
         <h1 class="anim d2">Grings <em>Indeka</em></h1>
-        <p class="role anim d3">Master's candidate in Business Engineering (Finance) — Solvay Brussels School</p>
-        <p class="lede anim d4">I build financial models and run empirical research at the intersection of valuation, derivatives, and asset pricing — turning data into investment decisions.</p>
+        <p class="role anim d3">Master's candidate in Business Engineering (Finance) - Solvay Brussels School</p>
+        <p class="lede anim d4">I build financial models and run empirical research at the intersection of valuation, derivatives, and asset pricing - turning data into investment decisions.</p>
         <div class="cta-row anim d5">
           <a class="btn primary" href="#research">View research →</a>
           <div class="cv-request">
@@ -346,7 +346,7 @@
     </div>
   </div>
 </header>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap reveal">
@@ -355,7 +355,7 @@
       <div>
         <p>I'm a final-year <strong>Business Engineering</strong> student at Solvay Brussels School, majoring in Finance, with an exchange semester in <strong>MSc Finance at Tilburg University</strong>. My work sits where rigorous quantitative methods meet real investment judgment.</p>
         <p>Across coursework and projects I've built full <strong>DCF, LBO and M&amp;A models</strong>, priced exotic derivatives with Monte Carlo simulation, and tested asset-pricing theory on decades of US equity data. I'm equally comfortable in an Excel valuation, a Python pricing engine, or a Stata regression output.</p>
-        <p>I care about clean reasoning, defensible assumptions, and communicating findings clearly — whether to a TA, a pitch panel, or a senior investor.</p>
+        <p>I care about clean reasoning, defensible assumptions, and communicating findings clearly - whether to a TA, a pitch panel, or a senior investor.</p>
       </div>
       <div class="focus-card">
         <h3>Areas of focus</h3>
@@ -370,61 +370,61 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- RESEARCH / PROJECTS -->
 <section id="research">
   <div class="wrap reveal">
     <div class="sec-head"><span class="sec-num">02</span><h2>Research &amp; Projects</h2></div>
     <div class="grid">
-
+ 
       <div class="card">
         <div class="corner"></div>
         <span class="tag">Equity Research</span>
         <h3>WD-40 Company Valuation</h3>
         <div class="sub">Solo report · 2025</div>
-        <p>Full intrinsic valuation of WD-40 using a WACC-based DCF (4.1%) with a Fama-French cost of assets. Issued a <strong>Buy</strong> on a $252.98 intrinsic value vs. $216.04 market — ~17% upside — backed by a WACC/terminal-growth sensitivity grid.</p>
+        <p>Full intrinsic valuation of WD-40 using a WACC-based DCF (4.1%) with a Fama-French cost of assets. Issued a <strong>Buy</strong> on a $252.98 intrinsic value vs. $216.04 market - ~17% upside - backed by a WACC/terminal-growth sensitivity grid.</p>
         <div class="chips"><span class="chip">DCF</span><span class="chip">WACC</span><span class="chip">Fama-French</span><span class="chip">Sensitivity</span></div>
         <a class="dl" href="wd40-equity-research.pdf" download>Download report</a>
       </div>
-
+ 
       <div class="card">
         <div class="corner"></div>
         <span class="tag">Quantitative</span>
-        <h3>Derivatives Valuation — NVIDIA</h3>
-        <div class="sub"> Personal project · Tilburg</div>
+        <h3>Derivatives Valuation - NVIDIA</h3>
+        <div class="sub">Solo project · Tilburg</div>
         <p>Built a 10,000-path Monte Carlo engine in Python to price vanilla and exotic (Asian, Lookback) options on NVDA, benchmarked against Black-Scholes for convergence, and constructed a delta-gamma hedged portfolio.</p>
         <div class="chips"><span class="chip">Monte Carlo</span><span class="chip">Black-Scholes</span><span class="chip">Python</span><span class="chip">Greeks</span></div>
         <a class="dl" href="derivatives-nvidia.pdf" download>Download report</a>
       </div>
-
+ 
       <div class="card">
         <div class="corner"></div>
         <span class="tag">Empirical Research</span>
         <h3>CAPM &amp; Fama-French on 75 US Equities</h3>
-        <div class="sub">Personal project · 1987–2025</div>
+        <div class="sub">Solo project · 1987-2025</div>
         <p>Tested the CAPM and a three-factor model across a stratified sample of 75 US stocks: estimated the Security Market Line, ran cross-sectional regressions, built mean-variance frontiers, and analysed size/value effects and survivorship bias.</p>
         <div class="chips"><span class="chip">CAPM</span><span class="chip">Stata</span><span class="chip">R</span><span class="chip">Factor models</span></div>
         <a class="dl" href="empirical-asset-pricing.pdf" download>Download paper</a>
       </div>
-
+ 
       <div class="card">
         <div class="corner"></div>
         <span class="tag">Impact Investing</span>
-        <h3>Aphea Bio — Series D Pitch</h3>
+        <h3>Aphea Bio - Series D Pitch</h3>
         <div class="sub">Investment memo &amp; pitch</div>
         <p>€15M Series D case for a biotech developing pesticide alternatives. Valued at €224.8M pre-money (DCF, 17.95% WACC), modeling a 23.2% IRR and 8.32× Impact Multiple of Money. Pitched to senior investors incl. CIO SFPI-FPIM &amp; CEO Ginkgo.</p>
         <div class="chips"><span class="chip">Venture</span><span class="chip">IRR</span><span class="chip">ESG / Impact</span></div>
       </div>
-
+ 
       <div class="card">
         <div class="corner"></div>
         <span class="tag">Private Equity</span>
-        <h3>LBO — Groupe Déchets</h3>
+        <h3>LBO - Groupe Déchets</h3>
         <div class="sub">Deal analysis</div>
         <p>Structured a 70%-leveraged buyout with a full LBO model: base-case 23.01% IRR and 2.82× cash-on-cash, a 37.72% IRR early-exit scenario, and a reverse-IRR to back out the maximum entry price.</p>
         <div class="chips"><span class="chip">LBO</span><span class="chip">IRR</span><span class="chip">Leverage</span></div>
       </div>
-
+ 
       <div class="card">
         <div class="corner"></div>
         <span class="tag">M&amp;A</span>
@@ -433,11 +433,11 @@
         <p>Evaluated a hypothetical acquisition: DCF valuation of Proximus, EPS-accretion modeling under multiple financing scenarios, and a final recommendation against the deal on unrealistic synergies and political risk.</p>
         <div class="chips"><span class="chip">DCF</span><span class="chip">Accretion/Dilution</span><span class="chip">Synergies</span></div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- THESIS -->
 <section id="thesis">
   <div class="wrap reveal">
@@ -450,7 +450,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- EDUCATION -->
 <section id="education">
   <div class="wrap reveal">
@@ -458,26 +458,26 @@
     <div class="timeline">
       <div class="edu">
         <div class="when">EXPECTED 2026</div>
-        <h3>Master's in Business Engineering — Finance</h3>
-        <div class="place">Solvay Brussels School of Economics &amp; Management — Brussels, BE</div>
+        <h3>Master's in Business Engineering - Finance</h3>
+        <div class="place">Solvay Brussels School of Economics &amp; Management - Brussels, BE</div>
         <div class="note">Magna cum laude · Capital Markets &amp; Investment Banking · Advanced Corporate Finance</div>
       </div>
       <div class="edu">
-        <div class="when">AUG – DEC 2025</div>
-        <h3>MSc Finance — Exchange Semester</h3>
-        <div class="place">Tilburg University — Tilburg, NL</div>
+        <div class="when">AUG - DEC 2025</div>
+        <h3>MSc Finance - Exchange Semester</h3>
+        <div class="place">Tilburg University - Tilburg, NL</div>
         <div class="note">Investment Analysis · Derivative Securities · Corporate Valuation &amp; Restructuring</div>
       </div>
       <div class="edu">
-        <div class="when">2020 – 2024</div>
+        <div class="when">2020 - 2024</div>
         <h3>Bachelor's in Business Engineering</h3>
-        <div class="place">Solvay Brussels School — Brussels, BE</div>
+        <div class="place">Solvay Brussels School - Brussels, BE</div>
         <div class="note">Econometrics · Statistics · Finance &amp; Accounting</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- SKILLS -->
 <section id="skills">
   <div class="wrap reveal">
@@ -507,14 +507,14 @@
       <div class="skillcard">
         <h3><span class="o"></span>Certifications &amp; Languages</h3>
         <div class="pills">
-          <span class="pill cert">FMVA® — CFI</span><span class="pill cert">Derivatives — IBKR</span>
+          <span class="pill cert">FMVA® - CFI</span><span class="pill cert">Derivatives - IBKR</span>
           <span class="pill">French (Native)</span><span class="pill">English (Fluent)</span><span class="pill">Dutch (Intermediate)</span>
         </div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap reveal">
@@ -530,25 +530,25 @@
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <div class="wrap">
     Grings Indeka <span class="dot"></span> Brussels, Belgium <span class="dot"></span> © <span id="yr"></span>
   </div>
 </footer>
-
+ 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-
+ 
   // scroll reveal
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
   },{ threshold:0.12 });
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
+ 
   // close mobile menu on link tap
   document.querySelectorAll('#nl a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nl').classList.remove('open')));
-
+ 
   // CV request: toggle menu + open pre-filled email
   const cvBtn = document.getElementById('cvBtn');
   const cvMenu = document.getElementById('cvMenu');
@@ -561,11 +561,11 @@
     if(!cvMenu.contains(e.target) && e.target !== cvBtn){ cvMenu.classList.remove('open'); cvBtn.setAttribute('aria-expanded','false'); }
   });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ cvMenu.classList.remove('open'); cvBtn.setAttribute('aria-expanded','false'); } });
-
+ 
   function cvRequest(area){
     const email = 'grings.indeka@hotmail.com';
     const isOther = (area === 'Other');
-    const subject = 'CV request' + (isOther ? '' : ' — ' + area);
+    const subject = 'CV request' + (isOther ? '' : ' - ' + area);
     const phrase = isOther ? 'a potential opportunity' : 'an opportunity in ' + area;
     const body =
       'Hi Grings,\n\n' +
@@ -579,6 +579,6 @@
       '&body='   + encodeURIComponent(body);
   }
 </script>
-
+ 
 </body>
 </html>
