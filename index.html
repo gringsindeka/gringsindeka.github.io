@@ -102,6 +102,27 @@
   .btn.ghost{ border-color:var(--ink); color:var(--ink); }
   .btn.ghost:hover{ background:var(--ink); color:var(--paper); transform:translateY(-2px); }
 
+  /* CV request dropdown */
+  .cv-request{ position:relative; display:inline-block; }
+  .cv-menu{
+    position:absolute; top:calc(100% + 12px); left:0; z-index:40;
+    background:var(--card); border:1px solid var(--line); border-radius:24px;
+    box-shadow:var(--shadow); padding:14px; min-width:250px;
+    display:flex; flex-direction:column; gap:4px;
+    opacity:0; visibility:hidden; transform:translateY(-8px); transition:.22s;
+  }
+  .cv-menu.open{ opacity:1; visibility:visible; transform:none; }
+  .cv-menu-title{ font-size:.74rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase;
+    color:var(--ink-soft); padding:6px 14px 10px; }
+  .cv-menu button{
+    text-align:left; background:none; border:none; cursor:pointer;
+    font-family:var(--sans); font-size:.95rem; font-weight:600; color:var(--ink);
+    padding:11px 16px; border-radius:14px; transition:.18s; display:flex; align-items:center; gap:10px;
+  }
+  .cv-menu button::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--amber); flex:none; opacity:0; transition:.18s; }
+  .cv-menu button:hover{ background:var(--paper-2); }
+  .cv-menu button:hover::before{ opacity:1; }
+
   /* circular portrait */
   .portrait-wrap{ display:flex; justify-content:center; position:relative; }
   .portrait{
@@ -293,7 +314,17 @@
         <p class="lede anim d4">I build financial models and run empirical research at the intersection of valuation, derivatives, and asset pricing — turning data into investment decisions.</p>
         <div class="cta-row anim d5">
           <a class="btn primary" href="#research">View research →</a>
-          <a class="btn ghost" href="cv.pdf" download>Download CV ↓</a>
+          <div class="cv-request">
+            <button class="btn ghost" id="cvBtn" type="button" aria-haspopup="true" aria-expanded="false">Request my CV ↓</button>
+            <div class="cv-menu" id="cvMenu" role="menu" aria-label="Request CV by area">
+              <span class="cv-menu-title">Which area is this for?</span>
+              <button role="menuitem" type="button" onclick="cvRequest('Global Markets')">Global Markets</button>
+              <button role="menuitem" type="button" onclick="cvRequest('Global Banking')">Global Banking</button>
+              <button role="menuitem" type="button" onclick="cvRequest('Asset Management')">Asset Management</button>
+              <button role="menuitem" type="button" onclick="cvRequest('Private Equity / Venture Capital')">Private Equity / VC</button>
+              <button role="menuitem" type="button" onclick="cvRequest('Other')">Other</button>
+            </div>
+          </div>
         </div>
         <div class="stats anim d6">
           <div class="stat"><div class="n">16.6<span style="font-size:1rem">/20</span></div><div class="l">Major GPA · Magna cum laude</div></div>
@@ -360,7 +391,7 @@
         <div class="corner"></div>
         <span class="tag">Quantitative</span>
         <h3>Derivatives Valuation — NVIDIA</h3>
-        <div class="sub">Academic project · Tilburg</div>
+        <div class="sub">Group project · Tilburg</div>
         <p>Built a 10,000-path Monte Carlo engine in Python to price vanilla and exotic (Asian, Lookback) options on NVDA, benchmarked against Black-Scholes for convergence, and constructed a delta-gamma hedged portfolio.</p>
         <div class="chips"><span class="chip">Monte Carlo</span><span class="chip">Black-Scholes</span><span class="chip">Python</span><span class="chip">Greeks</span></div>
         <a class="dl" href="derivatives-nvidia.pdf" download>Download report</a>
@@ -370,7 +401,7 @@
         <div class="corner"></div>
         <span class="tag">Empirical Research</span>
         <h3>CAPM &amp; Fama-French on 75 US Equities</h3>
-        <div class="sub">Academic project · 1987–2025</div>
+        <div class="sub">Group project · 1987–2025</div>
         <p>Tested the CAPM and a three-factor model across a stratified sample of 75 US stocks: estimated the Security Market Line, ran cross-sectional regressions, built mean-variance frontiers, and analysed size/value effects and survivorship bias.</p>
         <div class="chips"><span class="chip">CAPM</span><span class="chip">Stata</span><span class="chip">R</span><span class="chip">Factor models</span></div>
         <a class="dl" href="empirical-asset-pricing.pdf" download>Download paper</a>
@@ -517,6 +548,36 @@
 
   // close mobile menu on link tap
   document.querySelectorAll('#nl a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nl').classList.remove('open')));
+
+  // CV request: toggle menu + open pre-filled email
+  const cvBtn = document.getElementById('cvBtn');
+  const cvMenu = document.getElementById('cvMenu');
+  cvBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = cvMenu.classList.toggle('open');
+    cvBtn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', (e)=>{
+    if(!cvMenu.contains(e.target) && e.target !== cvBtn){ cvMenu.classList.remove('open'); cvBtn.setAttribute('aria-expanded','false'); }
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ cvMenu.classList.remove('open'); cvBtn.setAttribute('aria-expanded','false'); } });
+
+  function cvRequest(area){
+    const email = 'grings.indeka@hotmail.com';
+    const isOther = (area === 'Other');
+    const subject = 'CV request' + (isOther ? '' : ' — ' + area);
+    const phrase = isOther ? 'a potential opportunity' : 'an opportunity in ' + area;
+    const body =
+      'Hi Grings,\n\n' +
+      'I came across your website and would like to request a copy of your CV in connection with ' + phrase + '. ' +
+      'Could you please send it over when you have a moment?\n\n' +
+      'Best regards,\n';
+    cvMenu.classList.remove('open');
+    cvBtn.setAttribute('aria-expanded','false');
+    window.location.href = 'mailto:' + email +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body='   + encodeURIComponent(body);
+  }
 </script>
 
 </body>
